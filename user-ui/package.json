@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "gen-env": "ts-node generate-env.js",
+    "prebuild": "prisma generate",
     "dev": "npm run gen-env && next dev",
     "build": "next build",
     "start": "next start",
