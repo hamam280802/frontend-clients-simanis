@@ -1,17 +1,13 @@
 'use client'
 
-import { useSearchParams } from 'next/navigation';
-import ResetPassword from '@/src/shared/Auth/ResetPassword';
+import { Suspense } from 'react';
+import ResetPasswordClient from './ResetPasswordClient';
 
-const Page = () => {
-  const searchParams = useSearchParams();
-  const activationToken = searchParams.get("verify") ?? "";
 
+export default function Page() {
   return (
-    <div>
-      <ResetPassword activationToken={activationToken} />
-    </div>
+    <Suspense fallback={null /* atau skeleton/loading kecil */}>
+      <ResetPasswordClient />
+    </Suspense>
   );
-};
-
-export default Page;
+}
